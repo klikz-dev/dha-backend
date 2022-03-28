@@ -13,7 +13,8 @@ class MembershipSerializer(serializers.ModelSerializer):
 class MembershipListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Membership
-        fields = ['pk']
+        fields = ['email', 'membership', 'acute',
+                  'ambulatory', 'ltpac', 'created_at', 'updated_at']
 
 
 class MembershipDetailSerializer(serializers.ModelSerializer):

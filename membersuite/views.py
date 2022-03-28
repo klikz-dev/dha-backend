@@ -15,6 +15,10 @@ class MembershipViewSet(viewsets.ModelViewSet):
     def list(self, request):
         memberships = Membership.objects.all()
 
+        email = self.request.query_params.get('email')
+        if email is not None:
+            memberships = memberships.filter(email=email)
+
         page = self.paginate_queryset(memberships)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
