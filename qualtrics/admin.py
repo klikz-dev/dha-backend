@@ -14,17 +14,17 @@ class ReportsInline(admin.TabularInline):
 
 
 class AnalysisAdmin(admin.ModelAdmin):
-    fields = ['email', 'data']
-    list_display = ['email']
-    search_fields = ['email']
+    fields = ['email', 'analysis_name', 'data']
+    list_display = ['email', 'analysis_name']
+    search_fields = ['email', 'analysis_name']
 
     inlines = [ReportsInline]
 
 
 class ReportAdmin(admin.ModelAdmin):
-    fields = ['analysis', 'data']
-    list_display = ['analysis']
-    search_fields = ['analysis']
+    fields = ['analysis', 'report_name', 'data']
+    list_display = ['analysis', 'report_name']
+    search_fields = ['analysis', 'report_name']
 
 
 admin.site.register(Survey, SurveyAdmin)

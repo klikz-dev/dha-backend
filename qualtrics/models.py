@@ -19,6 +19,9 @@ class Analysis(models.Model):
     email = models.CharField(
         max_length=200, default="", null=False, blank=False)
 
+    analysis_name = models.CharField(
+        max_length=200, default="", null=False, blank=False)
+
     data = models.JSONField()
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
@@ -34,6 +37,9 @@ class Analysis(models.Model):
 class Report(models.Model):
     analysis = models.ForeignKey(
         Analysis, related_name="reports", on_delete=models.CASCADE)
+
+    report_name = models.CharField(
+        max_length=200, default="", null=False, blank=False)
 
     data = models.JSONField()
 

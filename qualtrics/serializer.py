@@ -32,13 +32,13 @@ class ReportSerializer(serializers.ModelSerializer):
 class ReportListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Report
-        fields = ['pk']
+        fields = ['pk', 'report_name', 'created_at']
 
 
 class ReportDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Report
-        fields = ['analysis', 'data', 'created_at', 'updated_at']
+        fields = ['analysis', 'report_name', 'data', 'created_at', 'updated_at']
 
 
 # Analysis
@@ -51,7 +51,7 @@ class AnalysisSerializer(serializers.ModelSerializer):
 class AnalysisListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Analysis
-        fields = ['pk']
+        fields = ['pk', 'analysis_name', 'created_at']
 
 
 class AnalysisDetailSerializer(serializers.ModelSerializer):
@@ -59,4 +59,4 @@ class AnalysisDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Analysis
-        fields = ['email', 'data', 'created_at', 'updated_at', 'reports']
+        fields = ['email', 'data', 'analysis_name', 'created_at', 'updated_at', 'reports']
