@@ -13,7 +13,7 @@ class SurveySerializer(serializers.ModelSerializer):
 class SurveyListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Survey
-        fields = ['pk', 'email', 'data']
+        fields = ['pk', 'email', 'survey_id', 'data', 'created_at', 'updated_at']
 
 
 class SurveyDetailSerializer(serializers.ModelSerializer):
