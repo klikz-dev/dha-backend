@@ -3,9 +3,9 @@ from django.db import models
 
 MEMBERSHIP_OPTIONS = (
     ('provider', 'Provider'),
-    ('provider_plus', 'Provider +'),
-    ('market', 'Market Research'),
-    ('market_plus', 'Market Research +'),
+    ('provider-plus', 'Provider +'),
+    ('market-research', 'Market Research'),
+    ('market-research-plus', 'Market Research +'),
 )
 
 

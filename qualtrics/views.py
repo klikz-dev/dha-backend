@@ -15,6 +15,10 @@ class SurveyViewSet(viewsets.ModelViewSet):
     def list(self, request):
         surveys = Survey.objects.all()
 
+        email = self.request.query_params.get('email')
+        if email is not None:
+            surveys = surveys.filter(email=email)
+
         page = self.paginate_queryset(surveys)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
@@ -67,6 +71,10 @@ class AnalysisViewSet(viewsets.ModelViewSet):
     def list(self, request):
         analytics = Analysis.objects.all()
 
+        email = self.request.query_params.get('email')
+        if email is not None:
+            analytics = analytics.filter(email=email)
+
         page = self.paginate_queryset(analytics)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
@@ -118,6 +126,10 @@ class ReportViewSet(viewsets.ModelViewSet):
 
     def list(self, request):
         reports = Report.objects.all()
+
+        email = self.request.query_params.get('email')
+        if email is not None:
+            reports = reports.filter(analysis__email=email)
 
         analysis = self.request.query_params.get('analysis')
         if analysis is not None:

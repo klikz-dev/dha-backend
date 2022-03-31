@@ -8,6 +8,8 @@ class Survey(models.Model):
     survey_id = models.CharField(
         max_length=200, default="", null=False, blank=False)
 
+    data = models.JSONField()
+
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 

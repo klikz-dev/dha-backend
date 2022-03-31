@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'django_json_widget',
 
     'membersuite',
     'qualtrics',
