@@ -6,10 +6,11 @@ class MembershipAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['email', 'membership']}),
         ('DHMW Reports', {'fields': ['acute', 'ambulatory', 'ltpac']}),
+        (None, {'fields': ['organization_name']})
     ]
 
     list_filter = ['membership']
-    list_display = ['email', 'membership', 'acute', 'ambulatory', 'ltpac']
+    list_display = ['email', 'membership', 'acute', 'ambulatory', 'ltpac', 'organization_name']
     search_fields = ['email', 'membership', 'acute', 'ambulatory', 'ltpac']
 
 

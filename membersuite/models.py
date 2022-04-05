@@ -25,6 +25,9 @@ class Membership(models.Model):
     ltpac = models.URLField(verbose_name="LTPAC",
                             max_length=200, default="", null=True, blank=True)
 
+    organization_name = models.CharField(
+        max_length=200, default="", null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
