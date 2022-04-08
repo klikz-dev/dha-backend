@@ -10,8 +10,8 @@ class MembershipAdmin(admin.ModelAdmin):
     ]
 
     list_filter = ['membership']
-    list_display = ['email', 'membership', 'acute', 'ambulatory', 'ltpac', 'organization_name']
-    search_fields = ['email', 'membership', 'acute', 'ambulatory', 'ltpac']
+    list_display = ['email', 'membership', 'organization_name']
+    search_fields = ['email', 'membership', 'organization_name']
 
 
 admin.site.register(Membership, MembershipAdmin)

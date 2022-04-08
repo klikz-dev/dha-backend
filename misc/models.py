@@ -14,7 +14,7 @@ class Announcement(models.Model):
         max_length=2000, default="", null=False, blank=False)
 
     text = models.TextField(
-        max_length=2000, default="", null=False, blank=False)
+        max_length=2000, default="", null=True, blank=True)
 
     membership = models.CharField(
         max_length=20, default='provider', choices=MEMBERSHIP_OPTIONS, null=False, blank=False)
