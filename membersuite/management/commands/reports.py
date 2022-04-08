@@ -55,12 +55,15 @@ class Command(BaseCommand):
                 if ltpac == 'N/A':
                     ltpac = ''
 
+                organization_name = str(sh.cell(row=i, column=2).value).strip()
+
                 Membership.objects.create(
                     email=email,
                     membership=membership,
                     acute=acute,
                     ambulatory=ambulatory,
-                    ltpac=ltpac
+                    ltpac=ltpac,
+                    organization_name=organization_name
                 )
 
                 print("Success to get membership details for email: {}".format(email))
