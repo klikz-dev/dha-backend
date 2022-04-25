@@ -16,6 +16,12 @@ class Announcement(models.Model):
     text = models.TextField(
         max_length=2000, default="", null=True, blank=True)
 
+    button_text = models.CharField(
+        max_length=200, default="", null=True, blank=True)
+
+    button_link = models.CharField(
+        max_length=200, default="", null=True, blank=True)
+
     membership = models.CharField(
         max_length=20, default='provider', choices=MEMBERSHIP_OPTIONS, null=False, blank=False)
 
